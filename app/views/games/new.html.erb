@@ -1,0 +1,15 @@
+<div class="d-flex flex-column">
+  <div class="d-flex flex-row">
+    <% @letters.each do |letter|%>
+      <h2><%=letter%></h2>
+    <%end%>
+    <form action="/score" method="post" data-turbo="false">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    </div>
+    <label for="text" class="mx-3">What's your answer?</label>
+    <div class="input-group m-3">
+      <input type="text" name = "word" class="form-control" id="text">
+      <button class="btn btn-outline-secondary" type="submit">Play</button>
+    </div>
+  </form>
+</div>
